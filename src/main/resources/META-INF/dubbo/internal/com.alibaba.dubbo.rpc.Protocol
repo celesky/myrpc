@@ -1,0 +1,2 @@
+grpc=com.hola.myrpc.dubbo.extention.protocol.grpc.GrpcProtocol
+thrift2=com.hola.myrpc.dubbo.extention.protocol.thrift2.Thrift2Protocol
