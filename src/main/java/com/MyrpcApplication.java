@@ -1,6 +1,5 @@
-package com.hola.myrpc;
+package com;
 
-import com.hola.myrpc.dubbo.provider.SearchServiceThriftImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;

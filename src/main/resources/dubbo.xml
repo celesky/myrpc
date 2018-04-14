@@ -9,7 +9,7 @@
     <!-- 提供方应用信息，用于计算依赖关系 -->
     <dubbo:application name="demo-provider"/>
     <!-- 使用multicast广播注册中心暴露服务地址 -->
-    <dubbo:registry protocol="zookeeper" address="127.0.0.1:2181" />
+    <dubbo:registry protocol="zookeeper" address="47.106.140.44:2181" />
     <!--<dubbo:registry protocol="zookeeper" address="10.28.66.219:2181" />-->
     <!-- 用dubbo协议在20880端口暴露服务 -->
 
@@ -24,14 +24,12 @@
     <dubbo:service interface="com.hola.myrpc.dubbo.api.HelloServiceProvider" ref="helloService" retries="0" loadbalance="leastactive" protocol="dubbo" version="1.0.0"/>
 
 
-     <!--
-    <dubbo:service interface="com.hola.myrpc.dubbo.api.dthrift.ThriftApiProvider$Iface" ref="thriftApiService" retries="0"  loadbalance="leastactive" protocol="thrift2"  />
-    -->
+    <dubbo:service interface="com.hola.myrpc.dubbo.api.dthrift.ThriftApiProvider$Iface" ref="thriftApiService" retries="0"  loadbalance="leastactive" protocol="thrift"  />
 
-    <dubbo:service interface="com.hola.myrpc.dubbo.api.dthrift.SearchThriftProvider$Iface" ref="searchServiceThriftImpl"  protocol="thrift2" loadbalance="consistenthash">
+    <dubbo:service interface="com.hola.myrpc.dubbo.api.dthrift.SearchThriftProvider$Iface" ref="searchServiceThriftImpl" protocol="thrift2" loadbalance="consistenthash">
     </dubbo:service>
 
 
-    <dubbo:service interface="com.hola.myrpc.dubbo.api.dthrift.HelloDthriftApi$Iface" ref="helloThriftServiceImpl"  protocol="thrift" loadbalance="consistenthash">
+    <dubbo:service interface="com.hola.myrpc.dubbo.api.dthrift.HelloDthriftApi$Iface" ref="helloThriftServiceImpl" protocol="thrift" loadbalance="consistenthash" version="1.0.0">
     </dubbo:service>
 </beans>

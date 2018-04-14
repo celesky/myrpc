@@ -1,23 +1,24 @@
 package com.hola.myrpc;
 
 
-import com.alibaba.dubbo.common.json.JSON;
 import com.hola.myrpc.dubbo.api.HelloServiceProvider;
-import com.hola.myrpc.dubbo.api.dthrift.*;
+import com.hola.myrpc.dubbo.api.dthrift.HelloDthriftApi;
+import com.hola.myrpc.dubbo.api.dthrift.SearchMoviePersonResultDto;
+import com.hola.myrpc.dubbo.api.dthrift.SearchThriftProvider;
+import com.hola.myrpc.dubbo.api.dthrift.ThriftApiProvider;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.atomic.AtomicLong;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration({ "classpath:dubbo-test.xml" })
+@ContextConfiguration({"classpath:dubbo-test.xml"})
+//@ImportResource({"dubbo-test.xml"})
 public class ConsumerUnitTest {
     private static final int THREAD_NUM = 300;
 
@@ -30,7 +31,7 @@ public class ConsumerUnitTest {
     private static ExecutorService executor = Executors.newFixedThreadPool(THREAD_NUM);
 
     public static void main(String[] args) throws Exception {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"dubbo-test.xml"});
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"dubbo.xml"});
         context.start();
 
         //testMovieDataProvider(context);

@@ -1,20 +1,18 @@
-package com.hola.serialize.protobuf;
+package com.hola.myrpc.serialize.protobuf;
 
 import java.io.FileInputStream;
-import com.hola.serialize.protobuf.AddressBookProtos.AddressBook;
-import com.hola.serialize.protobuf.AddressBookProtos.Person;
 
 public class ListPeople {
     // Iterates though all people in the AddressBook and prints info about them.
-    static void Print(AddressBook addressBook) {
-        for (Person person: addressBook.getPeopleList()) {
+    static void Print(AddressBookProtos.AddressBook addressBook) {
+        for (AddressBookProtos.Person person: addressBook.getPeopleList()) {
             System.out.println("Person ID: " + person.getId());
             System.out.println("  Name: " + person.getName());
             if (person.hasEmail()) {
                 System.out.println("  E-mail address: " + person.getEmail());
             }
 
-            for (Person.PhoneNumber phoneNumber : person.getPhonesList()) {
+            for (AddressBookProtos.Person.PhoneNumber phoneNumber : person.getPhonesList()) {
                 switch (phoneNumber.getType()) {
                     case MOBILE:
                         System.out.print("  Mobile phone #: ");
@@ -40,8 +38,8 @@ public class ListPeople {
         }
 
         // Read the existing address book.
-        AddressBook addressBook =
-                AddressBook.parseFrom(new FileInputStream(args[0]));
+        AddressBookProtos.AddressBook addressBook =
+                AddressBookProtos.AddressBook.parseFrom(new FileInputStream(args[0]));
 
         Print(addressBook);
     }

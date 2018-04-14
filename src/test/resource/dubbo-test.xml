@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	   xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
-	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
-	<description>测试消费者 </description>
+    <description>测试消费者 </description>
 
 
-	<!-- consumer application name -->
-	<dubbo:application name="test-consumer"/>
+    <!-- consumer application name -->
+    <dubbo:application name="test-consumer"/>
 
-	<dubbo:registry protocol="zookeeper" address="127.0.0.1:2181" />
-
-
-	<dubbo:reference id="helloService" interface="com.hola.myrpc.dubbo.api.HelloServiceProvider" retries="0" check="false" version="1.0.0"/>
+    <dubbo:registry protocol="zookeeper" address="47.106.140.44:2181" />
 
 
-	<dubbo:reference id="thriftApiService" interface="com.hola.myrpc.dubbo.api.dthrift.ThriftApiProvider$Iface" protocol="thrift2" retries="2" connections="1"  timeout="300000">
-	</dubbo:reference>
-
-	<dubbo:reference id="searchThriftService" interface="com.hola.myrpc.dubbo.api.dthrift.SearchThriftProvider$Iface" protocol="thrift2" retries="2" connections="1"  >
-
-	</dubbo:reference>
+    <dubbo:reference id="helloService" interface="com.hola.myrpc.dubbo.api.HelloServiceProvider" retries="0" check="false" version="1.0.0"/>
 
 
-	<dubbo:reference id="helloThriftService" interface="com.hola.myrpc.dubbo.api.dthrift.HelloDthriftApi$Iface" retries="0" check="false"/>
+    <dubbo:reference id="thriftApiService" interface="com.hola.myrpc.dubbo.api.dthrift.ThriftApiProvider$Iface" protocol="thrift" retries="2" connections="1" timeout="300000">
+    </dubbo:reference>
+
+    <dubbo:reference id="searchThriftService" interface="com.hola.myrpc.dubbo.api.dthrift.SearchThriftProvider$Iface" protocol="thrift2" retries="2" connections="1"  >
+
+    </dubbo:reference>
+
+
+    <dubbo:reference id="helloThriftService" interface="com.hola.myrpc.dubbo.api.dthrift.HelloDthriftApi$Iface" protocol="thrift" retries="0" check="false" version="1.0.0"/>
 
 
 

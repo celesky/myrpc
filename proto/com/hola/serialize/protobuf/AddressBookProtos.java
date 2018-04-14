@@ -649,7 +649,7 @@ public final class AddressBookProtos {
                   com.hola.serialize.protobuf.AddressBookProtos.Person.PhoneNumber.class, com.hola.serialize.protobuf.AddressBookProtos.Person.PhoneNumber.Builder.class);
         }
 
-        // Construct using com.hola.serialize.protobuf.AddressBookProtos.Person.PhoneNumber.newBuilder()
+        // Construct using AddressBookProtos.Person.PhoneNumber.newBuilder()
         private Builder() {
           maybeForceBuilderInitialization();
         }
@@ -1310,7 +1310,7 @@ public final class AddressBookProtos {
                 com.hola.serialize.protobuf.AddressBookProtos.Person.class, com.hola.serialize.protobuf.AddressBookProtos.Person.Builder.class);
       }
 
-      // Construct using com.hola.serialize.protobuf.AddressBookProtos.Person.newBuilder()
+      // Construct using AddressBookProtos.Person.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2301,7 +2301,7 @@ public final class AddressBookProtos {
                 com.hola.serialize.protobuf.AddressBookProtos.AddressBook.class, com.hola.serialize.protobuf.AddressBookProtos.AddressBook.Builder.class);
       }
 
-      // Construct using com.hola.serialize.protobuf.AddressBookProtos.AddressBook.newBuilder()
+      // Construct using AddressBookProtos.AddressBook.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
